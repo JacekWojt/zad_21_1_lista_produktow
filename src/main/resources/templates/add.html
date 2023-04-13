@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+<body>
+<div style="width: 500px; margin: 50px auto">
+    <a href="/">Powrót do głównej strony</a> <br>
+    <h3>Dodaj produkt</h3>
+    <form action="/dodaj" method="post" th:object="${product}">
+        <div class="form-group row">
+            <label for="productName" class="col-sm-2 col-form-label">Produkt</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="productName" placeholder="Jogurt" th:field="*{name}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="productPrice" class="col-sm-2 col-form-label">Cena</label>
+            <div class="col-sm-10">
+                <input type="number" step="0.01" class="form-control" id="productPrice" placeholder="5.90" th:field="*{price}">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="productCategory" class="col-sm-2 col-form-label">Kategoria</label>
+            <div class="col-sm-10">
+                <select class="form-control" id="productCategory" th:field="*{category}">
+                    <option disabled selected value="">Wybierz...</option>
+                    <option value="GROCERY">Artykóły spożywcze</option>
+                    <option value="AGD">Artykóły gospodarstwa domowego</option>
+                    <option value="OTHER">Inne</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="desc" class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                <input type="submit" value="Dodaj" class="btn btn-primary" id="desc"/>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>
