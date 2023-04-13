@@ -1,0 +1,17 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    padding: 10px;
+}
+
+.sum-price {
+    display: flex;
+    justify-content: end;
+    margin-right: 16px;
+}
+
+h2 {
+    margin-bottom: 40px;
+}
